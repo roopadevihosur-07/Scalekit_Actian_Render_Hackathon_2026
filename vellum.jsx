@@ -1170,18 +1170,24 @@ function LoginPage({ onLogin }) {
       {/* Left — brand */}
       <div style={{ padding: "64px 72px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: `1px solid ${tokens.hairline}`, position: "relative", zIndex: 1 }}>
         <div>
-          <div className="flex items-center gap-2">
-            <div style={{ width: 28, height: 28, borderRadius: 8, background: "linear-gradient(135deg, #7C3AED, #EC4899)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(124,58,237,0.4)" }}>
-              <Square size={12} style={{ color: "white" }} strokeWidth={2} />
+          <div style={{ marginBottom: 64 }}>
+            <div className="flex items-center gap-3">
+              <div style={{ width: 48, height: 48, borderRadius: 12, background: "linear-gradient(135deg, #7C3AED, #EC4899)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 8px 24px rgba(124,58,237,0.35)" }}>
+                <Square size={24} style={{ color: "white" }} strokeWidth={1.5} />
+              </div>
+              <span style={{ fontFamily: "Instrument Serif, serif", fontWeight: 500, fontSize: 48, letterSpacing: -0.8, color: tokens.ink }}>MediSync</span>
             </div>
-            <span style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: 0.3, color: tokens.ink }}>MediSync</span>
           </div>
-          <div style={{ marginTop: 96, fontFamily: "Instrument Serif, serif", fontSize: 72, lineHeight: 1.05, color: tokens.ink, maxWidth: 540 }}>
+
+          <div style={{ fontFamily: "Instrument Serif, serif", fontSize: 56, lineHeight: 1.2, color: tokens.ink, maxWidth: 540, marginBottom: 12 }}>
             One scheduler.
-            <span style={{ fontStyle: "italic", color: "#7C3AED" }}> Per-therapist</span> memory.
+          </div>
+          <div style={{ fontFamily: "Instrument Serif, serif", fontSize: 56, lineHeight: 1.2, color: tokens.ink, maxWidth: 540, marginBottom: 40 }}>
+            <span style={{ fontStyle: "italic", color: "#7C3AED" }}>Per-therapist</span> memory.
             <span style={{ fontStyle: "italic", color: "#EC4899" }}> Zero leakage.</span>
           </div>
-          <div style={{ marginTop: 32, fontFamily: "Inter, sans-serif", fontSize: 15, lineHeight: 1.65, color: tokens.inkSoft, maxWidth: 480 }}>
+
+          <div style={{ fontFamily: "Inter, sans-serif", fontSize: 14, lineHeight: 1.7, color: tokens.inkSoft, maxWidth: 480 }}>
             MediSync runs a shared background scheduler across your practice. When it fires,
             each therapist gets their own calendar check, their own VectorAI memory lookup,
             and their own pre-session brief — separated by identity walls that make
@@ -1199,10 +1205,10 @@ function LoginPage({ onLogin }) {
       {/* Right — clinician selector */}
       <div style={{ padding: "64px 72px", display: "flex", flexDirection: "column", justifyContent: "center", ...glassMixin, borderRadius: 0, borderLeft: "none", position: "relative", zIndex: 1 }}>
         <Eyebrow>Demo sign-in</Eyebrow>
-        <div style={{ marginTop: 16, fontFamily: "Instrument Serif, serif", fontSize: 32, color: tokens.ink }}>
+        <div style={{ marginTop: 16, fontFamily: "Instrument Serif, serif", fontSize: 24, color: tokens.ink }}>
           Continue as a clinician
         </div>
-        <div style={{ marginTop: 12, fontFamily: "Inter, sans-serif", fontSize: 14, color: tokens.inkSoft, maxWidth: 420, lineHeight: 1.6 }}>
+        <div style={{ marginTop: 12, fontFamily: "Inter, sans-serif", fontSize: 13, color: tokens.inkSoft, maxWidth: 420, lineHeight: 1.6 }}>
           Two practitioners share this prototype practice. Each holds their own caseload — choose one to begin, or open split-screen demo mode.
         </div>
 
