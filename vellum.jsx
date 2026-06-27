@@ -1232,16 +1232,6 @@ function LoginPage({ onLogin }) {
           ))}
         </div>
 
-        <button
-          onClick={() => onLogin("DEMO")}
-          style={{ marginTop: 14, padding: "16px 20px", ...glassMixin, borderRadius: 14, borderStyle: "dashed", cursor: "pointer", textAlign: "left", fontFamily: "Inter, sans-serif", fontSize: 13, color: tokens.inkSoft, display: "flex", alignItems: "center", justifyContent: "space-between", transition: "all 0.2s" }}
-          onMouseEnter={(e) => { e.currentTarget.style.color = tokens.ink; }}
-          onMouseLeave={(e) => { e.currentTarget.style.color = tokens.inkSoft; }}
-        >
-          <span>Open split-screen demo mode</span>
-          <ArrowRight size={14} />
-        </button>
-
         <div style={{ marginTop: 32, padding: "14px 18px", ...glassMixin, borderRadius: 10, display: "flex", gap: 10, alignItems: "flex-start" }}>
           <AlertCircle size={13} style={{ color: tokens.inkMute, marginTop: 1, flexShrink: 0 }} />
           <div style={{ fontFamily: "Inter, sans-serif", fontSize: 12, color: tokens.inkSoft, lineHeight: 1.55 }}>
