@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: medisync
+    env: node
+    plan: standard
+    buildCommand: npm install && npm run build
+    startCommand: NODE_ENV=production node server.js
+    port: 3001
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: SCALEKIT_ENVIRONMENT_URL
+        scope: run_and_build
+      - key: SCALEKIT_CLIENT_ID
+        scope: run_and_build
+      - key: SCALEKIT_CLIENT_SECRET
+        scope: run_and_build
+      - key: REDIRECT_URI
+        scope: run_and_build
+      - key: SESSION_SECRET
+        scope: run_and_build
+      - key: VECTORAI_HOST
+        value: vectorai:6574
