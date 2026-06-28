@@ -1876,13 +1876,19 @@ function DashboardPage({ identity, audit, setPage, setActiveClient }) {
                 </div>
               ) : (
                 <div style={{ fontFamily: "Inter, sans-serif", fontSize: 13, color: tokens.inkMute, fontStyle: "italic" }}>
-                  No Notion pages found for {nextSession.client}. Add notes in Notion and they'll appear here.
+                  No Notion pages found for {nextSession.client}. Session notes you write will appear here once synced.
                 </div>
               )}
             </>
           ) : (
             <>
-              <Eyebrow color={tokens.inkMute}>From seed memory · user-{identity.id}-memories</Eyebrow>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+                <Eyebrow color={tokens.warn}>Notion not connected</Eyebrow>
+              </div>
+              <div style={{ fontFamily: "Inter, sans-serif", fontSize: 13, color: tokens.inkSoft, marginBottom: 12, lineHeight: 1.5 }}>
+                Connect Notion (above) to search session notes you've written. Notes are saved automatically when you use Session Notes page.
+              </div>
+              <Eyebrow color={tokens.inkMute} style={{ marginTop: 16 }}>Fallback: Seed memory</Eyebrow>
               <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 10 }}>
                 {briefMemories.length > 0 ? briefMemories.map((m) => (
                   <div key={m.id} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
@@ -1895,7 +1901,7 @@ function DashboardPage({ identity, audit, setPage, setActiveClient }) {
                   </div>
                 )) : (
                   <div style={{ fontFamily: "Inter, sans-serif", fontSize: 13, color: tokens.inkMute, fontStyle: "italic" }}>
-                    No memories yet. Connect Notion above to pull live session notes.
+                    No seed memories available.
                   </div>
                 )}
               </div>
