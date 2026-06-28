@@ -290,7 +290,17 @@ app.post("/api/vectorai/sync/notion", async (req, res) => {
     const allItems = [];
 
     // 1. Fetch all top-level workspace content
-    const searchResult = await notionTool("notion_data_fetch", clinicianId, { query: "", page_size: 50 });
+    let searchResult;
+    try {
+      searchResult = await notionTool("notion_data_fetch", clinicianId, { query: "", page_size: 50 });
+    } catch (notionErr) {
+      console.error("[sync/notion] Notion connection failed:", notionErr.message);
+      return res.status(400).json({
+        ok: false,
+        error: "Notion not connected. Please click 'Connect Notion' first in the Dashboard.",
+        details: notionErr.message
+      });
+    }
     const topLevel = searchResult?.data?.results ?? [];
 
     for (const obj of topLevel) {
